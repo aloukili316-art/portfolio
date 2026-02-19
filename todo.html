@@ -29,20 +29,30 @@
       padding: 20px;
       border-radius: 10px;
       margin-top: 15px;
-      shadow: 0 2px 5px rgba(0,0,0,0.1);
+      /* تم تصحيح الكود هنا لإضافة الظل بشكل صحيح */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       border: 1px solid #ddd;
     }
     .project-link {
       display: inline-block;
-      margin-top: 10px;
+      margin-top: 15px;
       background: #3498db;
       color: white;
-      padding: 8px 15px;
+      padding: 10px 20px;
       border-radius: 5px;
       text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
     }
-    .project-link:hover { background: #2980b9; }
+    .project-link:hover { 
+      background: #2980b9; 
+    }
     a { color: #3498db; text-decoration: none; font-weight: bold; }
+    .status {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -67,10 +77,11 @@
 
   <section>
     <h2>Meine Projekte</h2>
+    
     <div class="box">
       <h3>1. Portfolio Website</h3>
       <p>Diese Webseite wurde mit HTML5 und CSS3 erstellt, um meine Profile und Projekte professionell zu präsentieren.</p>
-      <span style="color: green;">✔ Online</span>
+      <span class="status" style="color: green;">✔ Online</span>
     </div>
 
     <div class="box">
