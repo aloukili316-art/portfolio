@@ -1,103 +1,155 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio - Ayoub Loukili</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f9f9f9;
-    }
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 30px;
-      border-radius: 15px;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    h1 { margin: 0; font-size: 32px; }
-    h2 { color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 5px; }
-    .box {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 15px;
-      /* تم تصحيح الكود هنا لإضافة الظل بشكل صحيح */
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border: 1px solid #ddd;
-    }
-    .project-link {
-      display: inline-block;
-      margin-top: 15px;
-      background: #3498db;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .project-link:hover { 
-      background: #2980b9; 
-    }
-    a { color: #3498db; text-decoration: none; font-weight: bold; }
-    .status {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine ToDo App - Ayoub Loukili</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f4f7f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .todo-container {
+            background: white;
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        input[type="text"]:focus {
+            border-color: var(--accent-color);
+        }
+
+        button#add-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button#add-btn:hover {
+            background-color: #2980b9;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .delete-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Ayoub Loukili</h1>
-    <p>Angehender Fachinformatiker für Anwendungsentwicklung</p>
-    <p><b>Deutsch:</b> TELC C1 Hochschule | <b>GitHub:</b> aloukili316-art</p>
-  </header>
-
-  <section>
-    <h2>Über mich</h2>
-    <div class="box">
-      <p>
-        Aktuell studiere ich Wirtschaftsinformatik im 3. Semester. Da ich meine Stärken vor allem in der praktischen Umsetzung von Softwareprojekten sehe, strebe ich nun eine <b>Ausbildung zum Fachinformatiker für Anwendungsentwicklung</b> an. 
-      </p>
-      <p>
-        Ich besitze eine schnelle Auffassungsgabe und arbeite mich eigenständig in neue Technologien ein. Meine Fortschritte dokumentiere ich aktiv auf GitHub.
-      </p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Meine Projekte</h2>
+<div class="todo-container">
+    <h2>Meine Aufgaben</h2>
     
-    <div class="box">
-      <h3>1. Portfolio Website</h3>
-      <p>Diese Webseite wurde mit HTML5 und CSS3 erstellt, um meine Profile und Projekte professionell zu präsentieren.</p>
-      <span class="status" style="color: green;">✔ Online</span>
+    <div class="input-group">
+        <input type="text" id="todo-input" placeholder="Neue Aufgabe...">
+        <button id="add-btn">Hinzufügen</button>
     </div>
 
-    <div class="box">
-      <h3>2. ToDo App (JavaScript)</h3>
-      <p>Ein interaktives Tool zur Aufgabenverwaltung. Mein erstes Projekt mit JavaScript, um Logik in Webanwendungen zu integrieren.</p>
-      <a href="todo.html" class="project-link">App öffnen</a>
-    </div>
-  </section>
+    <ul id="todo-list">
+        </ul>
 
-  <section>
-    <h2>Kontakt</h2>
-    <div class="box">
-      <p>📧 Email: <a href="mailto:aloukili316@gmail.com">aloukili316@gmail.com</a></p>
-      <p>💻 GitHub: <a href="https://github.com/aloukili316-art" target="_blank">github.com/aloukili316-art</a></p>
-    </div>
-  </section>
+    <a href="index.html" class="back-link">← Zurück zum Portfolio</a>
+</div>
+
+<script>
+    const input = document.getElementById('todo-input');
+    const addBtn = document.getElementById('add-btn');
+    const todoList = document.getElementById('todo-list');
+
+    // دالة لإضافة مهمة
+    function addTask() {
+        const text = input.value.trim();
+        if (text !== "") {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <span>${text}</span>
+                <button class="delete-btn" onclick="this.parentElement.remove()">Löschen</button>
+            `;
+            todoList.appendChild(li);
+            input.value = "";
+        }
+    }
+
+    addBtn.addEventListener('click', addTask);
+
+    // إضافة مهمة عند الضغط على Enter
+    input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') addTask();
+    });
+</script>
 
 </body>
 </html>
